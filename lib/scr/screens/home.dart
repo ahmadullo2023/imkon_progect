@@ -12,28 +12,22 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SingleChildScrollView(
-        child: Column(
+      body: ListView(
         children: [
+          Container(height: 500, width: double.infinity, color: Colors.teal),
           Expanded(
-            child: Container(
-                height: 300,
-                width: double.infinity,
-                color: Colors.teal),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 4,
-              itemBuilder: (_, i) {
-                return horizontalListView();
-              },
+            child: SizedBox(
+              height: 800,
+              child: ListView.builder(
+                itemCount: 6,
+                itemBuilder: (_, i) {
+                  return horizontalListView();
+                },
+              ),
             ),
           ),
         ],
       ),
-      ),
     );
   }
 }
-
-
