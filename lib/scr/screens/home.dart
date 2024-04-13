@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
               child: ListView.builder(
                 itemCount: 6,
                 itemBuilder: (_, i) {
-                  return horizontalListView();
+                  return const HorizontalListView();
                 },
               ),
             ),
