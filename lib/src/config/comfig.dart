@@ -1,5 +1,3 @@
 class AppConfig {
-  static const baseUrl =
-      "https://streaming-availability.p.rapidapi.com";
-  static const path = "/countries";
+  static const baseUrl = "https://newsapi.org/v2/everything";
 }

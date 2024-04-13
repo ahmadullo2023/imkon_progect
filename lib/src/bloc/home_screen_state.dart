@@ -1,18 +1,21 @@
 part of 'home_screen_bloc.dart';
 
 class HomeScreenState extends Equatable {
-  final Apple? modelData;
+  const HomeScreenState({this.articles, this.loading});
 
-  const HomeScreenState({this.modelData});
+  final Articles? articles;
+  final bool? loading;
 
   @override
-  List<Object?> get props => [modelData];
+  List<Object?> get props => [articles, loading];
 
   HomeScreenState copyWith({
-    Apple? modelData,
+    Articles? articles,
+    bool? loading,
   }) {
     return HomeScreenState(
-      modelData: modelData ?? this.modelData,
+      articles: articles ?? this.articles,
+      loading: loading ?? this.loading,
     );
   }
 }

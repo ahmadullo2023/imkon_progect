@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:imkon_project/src/bloc/home_screen_bloc.dart';
-import '../widget/widget.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,25 +9,25 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  late HomeScreenBloc homeScreenBloc;
+
+  @override
+  void initState() {
+    homeScreenBloc = HomeScreenBloc()..add(ServiceDataEvent());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: ListView(
-        children: [
-          Container(height: 500, width: double.infinity, color: Colors.teal),
-          Expanded(
-            child: SizedBox(
-              height: 800,
-              child: ListView.builder(
-                itemCount: 6,
-                itemBuilder: (_, i) {
-                  return const HorizontalListView();
-                },
-              ),
-            ),
+      body: BlocBuilder<HomeScreenBloc, HomeScreenState>(
+        bloc: homeScreenBloc,
+        builder: (context, state) => ListView.builder(
+          itemBuilder: (context, index) => ListTile(
+            title: Text("${state.loading}"),
           ),
-        ],
+        ),
       ),
     );
   }
