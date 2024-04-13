@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:imkon_project/scr/screens/home.dart';
+
+import 'screens/home.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
