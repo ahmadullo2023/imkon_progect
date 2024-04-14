@@ -10,7 +10,7 @@ class ApiService {
       AppConfig.baseUrl,
       queryParameters: {
         "q": "tesla",
-        "from": "2024-03-13",
+        "from": "2024-04-13",
         "sortBy": "publishedAt",
       },
       options: Options(
